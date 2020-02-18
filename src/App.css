@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
-}
+.navbar{
+  position: absolute;
+  width: 992px;
+  height: 100px;
+  left: 0px;
+  top: 0px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
+.menu{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 31.31px;
+  top: 34px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar_logo{
+  position: absolute;
+  width: 278.78px;
+  height: 31px;
+  left: 300px;
+  top: 34px;
+  font-family: Airbnb Cereal App;
+  font-size: 30px;
+  line-height: 39px;
+  color: #000000;
+}
+.search{
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  text-align: left;
+  color: black;
+  background-color: rgba(194, 191, 191, 0.884);
+  margin-right: 400px;
+  display: inline-block;
+  position: absolute;
+  left:650px;
+  top: 38px;
+}
+.icon_search{
+  position: absolute;
+  width: 15px;
+  height: 35px;
+  left: 835px;
+  top: 34px;
+}
+*{
+  margin:0px;
+  padding:0px;
+  font-family: sans-serif;
+}
+#sidebar{
+  position: absolute;
+  width: 109px;
+  height: 535px;
+  left: 0px;
+  top: 100px;  
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.fork{
+  position: absolute;
+  width: 44.04px;
+  height: 40.61px;
+  left: 28.63px;
+  top: 30px;
 }
+.report{
+  position: absolute;
+  width: 55.05px;
+  height: 50.76px;
+  left: 25.32px;
+  top: 100px;
+}
+.add{
+  position: absolute;
+  width: 55.05px;
+  height: 50.76px;
+  left: 25.32px;
+  top: 180px;
+}
+/* #sidebar ul li{
+  color:rgba(245, 65, 41);
+  list-style: none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(150, 100, 100, 0.3);
+  width: 20px;
+  text-align: center;
+  margin-left: 10px;
+}
+#sidebar ul{
+  margin-left: 15px;
+} */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar_cart{
+  position: absolute;
+  width: 410px;
+  height: 100px;
+  left: 889px;
+  top: 0px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
+
+}
+.icon_keranjang{
+  position: absolute;
+  width: 125px;
+  height: 50px;
+  left: 140px;
+  top: 34px;
+
+  font-family: Airbnb Cereal App;
+  font-size: 25px;
+  line-height: 33px;
+
+  color: #000000;
 }
