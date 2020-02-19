@@ -7,25 +7,29 @@ import search from './search.svg';
 import { connect } from 'react-redux';
 import { searchProduct } from '../src/redux/actions'
 import Product from './components/Product'
+import { Badge, Button } from 'reactstrap'
 
 import './App.css';
 
 class App extends Component {
   render(){
     return (
-      <div> 
+      <div className='main-app'> 
         <nav className="navbar">
-          <div className="navbar_logo">HappyShop</div>
-         
-            <img src={menu} className="menu" alt="menu"/>
-            <input type="text" name="" className="search" placeholder="search" onChange={this.props.searchProduct}></input>
-            <img src={search} className="icon_search" alt="menu"/>
-          
+          <ul>
+            <li>
+              <img src={menu} className="menu" alt="menu"/>
+            </li>
+            <li>
+              <div className="navbar_logo">HappyShop</div>
+            </li>
+            <li>
+              <input type="text" name="" className="search" placeholder="search" onChange={this.props.searchProduct}></input>
+              <img src={search} className="icon_search" alt="menu"/>
+            </li>
+          </ul>
       </nav>
-      <nav className='navbar_cart'>
-        <div className='icon_keranjang'>cart</div>
-      </nav>
-      <div id="sidebar">
+      <div id="left-sidebar">
         <div className="toggle-btn">
             <span></span>
             <span></span>
@@ -38,6 +42,26 @@ class App extends Component {
         </ul>
       </div>
       <Product />
+      <div id='right-sidebar'>
+        <nav className='navbar_cart'>
+          <div className='navbar_keranjang'>
+              {/* cart <Badge color="info" pill>{this.props.addedItems.length}</Badge> */}
+              cart <Badge color="info" pill>4</Badge>
+          </div>
+        </nav>
+        <div className='cart-content'>
+            {/* {this.props.addedItems.map((element, index) => (
+                <div className="added-products" key={index}>
+                <img alt="product-item" src={element.image} style={{ height: '50px', width: '50px'}}/>
+                <Button color="success" id='minus-cart' onClick={() => this.props.editQty(element.id, false)}>-</Button>
+                {element.quantity}
+                <Button color="success" id='plus-cart' onClick={() => this.props.editQty(element.id, true)}>+</Button>
+                Rp. {element.quantity * element.price}
+            </div>
+            ))} */}
+            <p>Total : Rp. {this.props.total}</p>
+        </div>
+    </div>
       </div>
     );
 

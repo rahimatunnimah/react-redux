@@ -13,7 +13,7 @@ const ModalExample = (props) => {
 
   
 useEffect(()=>{
-    axios.get('http://localhost:4004/api/v1/category')
+    axios.get('http://3.83.235.171:8002/api/v1/category')
     .then(res => {
         console.log(res)
         setCategories(res.data.result
@@ -36,7 +36,7 @@ const [values, setValues] = React.useState({
   };
   const postProduct = () => {
     console.log (values)
-    axios.post('http://localhost:4004/api/v1/product', values)
+    axios.post('http://3.83.235.171:8002/api/v1/product', values)
     .then(res => {
       console.log(res.data.result)
     })

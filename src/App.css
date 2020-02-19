@@ -1,19 +1,24 @@
-.navbar{
-  position: absolute;
-  width: 992px;
-  height: 100px;
-  left: 0px;
-  top: 0px;
-
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+.main-app{
+  position: relative;
 }
+
+.navbar{
+  width: auto;
+    height: 100px;
+    margin-right: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.navbar li{
+  list-style: none;
+}
+
 .menu{
   position: absolute;
-  width: 35px;
-  height: 35px;
-  left: 31.31px;
-  top: 34px;
+    width: 35.35px;
+    height: 35px;
+    left: 31.31px;
+    top: 34px;
 
   
 }
@@ -28,6 +33,30 @@
   line-height: 39px;
   color: #000000;
 }
+
+.navbar_cart{
+  position: absolute;
+  width: 350px;
+  height: 100px;
+  right: 0;
+  top: 0px;
+  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25)
+}
+
+.navbar_keranjang{
+  position: absolute;
+  width: 125px;
+  height: 50px;
+  left: 145px;
+  top: 40px;
+
+  font-family: Airbnb Cereal App;
+  font-size: 25px;
+  line-height: 33px;
+
+  color: #000000;
+}
+
 .search{
   width: 200px;
   padding: 5px;
@@ -55,14 +84,14 @@
   padding:0px;
   font-family: sans-serif;
 }
-#sidebar{
+#left-sidebar{
   position: absolute;
   width: 109px;
-  height: 535px;
+  height: 1550px;
   left: 0px;
-  top: 100px;  
+  text-align: center;
   background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.25);
   display: flex;
 }
 .fork{
@@ -87,26 +116,32 @@
   top: 180px;
 }
 
-.navbar_cart{
+#right-sidebar{
   position: absolute;
-  width: 410px;
-  height: 100px;
-  left: 889px;
-  top: 0px;
+  width: 350px;
+  height: 1650px;
+  top: 0;
+  right: 0px;
+  text-align: center;
   background: #FFFFFF;
-  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.25);
+  display: flex;
 }
-.icon_keranjang{
+
+.cart-content{
   position: absolute;
-  width: 125px;
-  height: 50px;
-  left: 140px;
-  top: 34px;
+  top: 5%;
+  margin: 20px;
+}
 
-  font-family: Airbnb Cereal App;
-  font-size: 25px;
-  line-height: 33px;
+.added-products{
+  margin: 10px 0px;
+}
 
-  color: #000000;
+#plus-cart{
+  margin: 10px 5px 10px 10px;
+}
+
+#minus-cart{
+  margin: 10px 10px 10px 5px;
 }

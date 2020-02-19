@@ -14,7 +14,7 @@ const ModalExample = (props) => {
   const [confirmDelete, setConfirmDelete] = useState(false);
   
 useEffect(()=>{
-    axios.get('http://localhost:4004/api/v1/category')
+    axios.get('http://3.83.235.171:8002/api/v1/category')
     .then(res => {
         console.log(res)
         setCategories(res.data.result
@@ -35,7 +35,7 @@ const handleChange = props => event => {
   setValues({ ...values, [props]: event.target.value });
 };
 const patchProduct = () => {
-  axios.patch('http://localhost:4004/api/v1/product/'+product.id, values, {
+  axios.patch('http://3.83.235.171:8002/api/v1/product/'+product.id, values, {
       headers:{
           "Access-Control-Allow-Origin": "PUT"
       }
@@ -48,7 +48,7 @@ const patchProduct = () => {
   })
 }
 const deleteProduct = () => {
-    axios.delete('http://localhost:4004/api/v1/product/'+product.id)
+    axios.delete('http://3.83.235.171:8002/api/v1/product/'+product.id)
     .then(res => {
       console.log(res)
     })

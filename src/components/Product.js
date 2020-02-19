@@ -14,7 +14,7 @@ class Product extends Component{
         }
     }
     componentDidMount(){
-        axios.get('http://localhost:4004/api/v1/product')
+        axios.get('http://3.83.235.171:8002/api/v1/product')
         .then(res => {
             this.setState({
                 products:res.data.result.result
@@ -26,7 +26,7 @@ class Product extends Component{
     }
 
     searchProducts(){
-        axios.get('http://localhost:4004/api/v1/product', {
+        axios.get('http://3.83.235.171:8002/api/v1/product', {
             params: {
               name: this.props.query
             }
