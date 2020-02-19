@@ -1,28 +1,32 @@
 import React, {Component} from 'react';
-import './Login.css'
+import './Register.css'
 
-class Login extends Component{
+class Register extends Component{
     // constructor(props){
     //     super(props)
     // }
    
     render(){
         return(
+            <header>
             <div>
-                <div className='login_box'>
-                <h1>Login</h1>
+                <div className='register_box'>
+                <h1>Register</h1>
+                <div className='textbox'>
+                    <input type='text' placeholder='Name' name='' value=''></input>
+                </div>
                 <div className='textbox'>
                     <input type='text' placeholder='Username' name='' value=''></input>
                 </div>
                 <div className='textbox'>
                     <input type='password' placeholder='Password' name='' value=''></input>
                 </div>
-                <input className='btn' type='button' name='' value='Sign in'></input>
-                <input className='btn_up' type='button' name='' value='Sign up'></input>  
+                <input className='btn' type='button' name='' value='Sign up'></input> 
                 </div>                          
             </div>
+            </header>
         )
     }
 }
 
-export default Login
+export default Register
