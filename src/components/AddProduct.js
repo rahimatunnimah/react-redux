@@ -15,7 +15,6 @@ const ModalExample = (props) => {
 useEffect(()=>{
     axios.get('http://3.83.235.171:8002/api/v1/category')
     .then(res => {
-        console.log(res)
         setCategories(res.data.result
         )
   })
@@ -35,7 +34,6 @@ const [values, setValues] = React.useState({
     setValues({ ...values, [props]: event.target.value });
   };
   const postProduct = () => {
-    console.log (values)
     axios.post('http://3.83.235.171:8002/api/v1/product', values)
     .then(res => {
       console.log(res.data.result)

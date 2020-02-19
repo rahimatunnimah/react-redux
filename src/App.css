@@ -3,7 +3,7 @@
 }
 
 .navbar{
-  width: auto;
+    width: auto;
     height: 100px;
     margin-right: 350px;
     background: #FFFFFF;
@@ -14,7 +14,7 @@
 }
 
 .menu{
-  position: absolute;
+    position: absolute;
     width: 35.35px;
     height: 35px;
     left: 31.31px;
@@ -132,6 +132,10 @@
   position: absolute;
   top: 5%;
   margin: 20px;
+}
+
+.cart-content > button{
+  margin: 20px
 }
 
 .added-products{

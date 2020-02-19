@@ -1,3 +1,6 @@
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const SEARCH_PRODUCT = 'SEARCH_PRODUCT'
+export const SET_PRODUCTS = 'SET_PRODUCTS'
 export const RESET_IS_SEARCH = 'RESET_IS_SEARCH'
+export const SET_REFRESH = 'SET_REFRESH'
+export const EDIT_QTY = 'EDIT_QTY'

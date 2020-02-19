@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios'
 import './Product.css'
-import { resetIsSearch } from '../redux/actions'
+import { resetIsSearch, setProducts } from '../redux/actions'
 import ModalEdit from './ModalEdit'
 
 
@@ -19,6 +19,12 @@ class Product extends Component{
             this.setState({
                 products:res.data.result.result
             })
+
+            // set all products in redux
+            this.props.setProducts(this.state.products)
+
+            // reset isSeacrh to false
+            this.props.resetIsSearch()
       })
         .catch(err => {
           console.log(err)
@@ -44,6 +50,14 @@ class Product extends Component{
     }
     render(){
         if(this.props.query && this.props.isSearching){
+          this.searchProducts()
+        } else if(this.props.query === "" && this.props.isSearching){
+            this.componentDidMount()
+        }
+        if(this.props.isRefresh){
+          this.componentDidMount()
+        }
+        if(this.props.query && this.props.isSearching){
             this.searchProducts()
         }
         return(
@@ -58,13 +72,18 @@ class Product extends Component{
 
 const mapStateToProps = state => ({
     query: state.products.query,
-    isSearching: state.products.isSearching
+    isSearching: state.products.isSearching,
+    allProducts: state.products.allProducts,
+    isRefresh: state.products.isRefresh
   })
 
 const mapDispatchToProps = (dispatch) => {
     return {
       resetIsSearch: () => {
         dispatch(resetIsSearch())
+      },
+      setProducts: (data) => {
+        dispatch(setProducts(data))
       }
     }
   }

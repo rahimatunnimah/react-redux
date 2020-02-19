@@ -5,7 +5,7 @@ import add from './add.svg';
 import menu from './menu-button.svg';
 import search from './search.svg';
 import { connect } from 'react-redux';
-import { searchProduct } from '../src/redux/actions'
+import { searchProduct, editQty } from '../src/redux/actions'
 import Product from './components/Product'
 import { Badge, Button } from 'reactstrap'
 
@@ -45,12 +45,11 @@ class App extends Component {
       <div id='right-sidebar'>
         <nav className='navbar_cart'>
           <div className='navbar_keranjang'>
-              {/* cart <Badge color="info" pill>{this.props.addedItems.length}</Badge> */}
-              cart <Badge color="info" pill>4</Badge>
+              cart <Badge color="info" pill>{this.props.addedItems.length}</Badge>
           </div>
         </nav>
         <div className='cart-content'>
-            {/* {this.props.addedItems.map((element, index) => (
+            {this.props.addedItems.map((element, index) => (
                 <div className="added-products" key={index}>
                 <img alt="product-item" src={element.image} style={{ height: '50px', width: '50px'}}/>
                 <Button color="success" id='minus-cart' onClick={() => this.props.editQty(element.id, false)}>-</Button>
@@ -58,7 +57,7 @@ class App extends Component {
                 <Button color="success" id='plus-cart' onClick={() => this.props.editQty(element.id, true)}>+</Button>
                 Rp. {element.quantity * element.price}
             </div>
-            ))} */}
+            ))}
             <p>Total : Rp. {this.props.total}</p>
         </div>
     </div>
@@ -67,13 +66,19 @@ class App extends Component {
 
   }
 }
-
+const mapStateToProps = state => ({
+  addedItems: state.products.addedItems,
+  total: state.products.total
+})
 
 const mapDispatchToProps = (dispatch) => {
   return {
     searchProduct: q => {
       dispatch(searchProduct(q.target.value))
+    },
+    editQty: (id, isIncrement)=> {
+      dispatch(editQty(id, isIncrement))
     }
   }
 }
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

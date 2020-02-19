@@ -35,7 +35,7 @@ const handleChange = props => event => {
   setValues({ ...values, [props]: event.target.value });
 };
 const patchProduct = () => {
-  axios.patch('http://3.83.235.171:8002/api/v1/product/'+product.id, values, {
+  axios.put('http://3.83.235.171:8002/api/v1/product/'+product.id, values, {
       headers:{
           "Access-Control-Allow-Origin": "PUT"
       }
