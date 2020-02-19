@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import Login from './components/Login'
 import Register from './components/Register'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const AppWithRouter = () => (

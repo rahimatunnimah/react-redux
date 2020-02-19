@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios'
 import './Product.css'
-import Box from './Box'
 import { resetIsSearch } from '../redux/actions'
+import ModalEdit from './ModalEdit'
 
 
 class Product extends Component{
@@ -49,7 +49,7 @@ class Product extends Component{
         return(
             <div className='rectangle_product'>
                 {this.state.products.map((data, index)=>(
-                    <Box product={data} key={index}/>
+                    <ModalEdit product={data} key={index}/>
                 ))}
             </div>
         )

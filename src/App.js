@@ -7,6 +7,7 @@ import search from './search.svg';
 import { connect } from 'react-redux';
 import { searchProduct } from '../src/redux/actions'
 import Product from './components/Product'
+
 import './App.css';
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
         <ul>
           <li><img src={fork} className="fork" alt="menu"/></li>
           <li><img src={report} className="report" alt="menu"/></li>
-          <li><img src={add} className="add" alt="menu"/></li>
+          <li><img src={add} className="add" alt="menu" onClick={this.props.isOpen}/></li>
         </ul>
       </div>
       <Product />
@@ -42,6 +43,7 @@ class App extends Component {
 
   }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
