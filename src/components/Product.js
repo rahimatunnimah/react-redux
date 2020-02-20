@@ -57,9 +57,6 @@ class Product extends Component{
         if(this.props.isRefresh){
           this.componentDidMount()
         }
-        if(this.props.query && this.props.isSearching){
-            this.searchProducts()
-        }
         return(
             <div className='rectangle_product'>
                 {this.state.products.map((data, index)=>(

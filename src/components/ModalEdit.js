@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Box from './Box'
 import {  Form, FormGroup, Label, Input} from 'reactstrap';
+import { setIsRefresh } from '../redux/actions';
+import {connect} from 'react-redux'
 import axios from 'axios';
+
+
 const ModalExample = (props) => {
   const {
     className,
     product,
+    setIsRefresh
   } = props;
   
   const [modal, setModal] = useState(false);
@@ -42,6 +47,7 @@ const patchProduct = () => {
   })
   .then(res => {
     console.log(res)
+    setIsRefresh()
   })
   .catch(err => {
       console.log(err)
@@ -51,6 +57,7 @@ const deleteProduct = () => {
     axios.delete('http://3.83.235.171:8002/api/v1/product/'+product.id)
     .then(res => {
       console.log(res)
+      setIsRefresh()
     })
     .catch(err => {
         console.log(err)
@@ -128,5 +135,10 @@ const deleteProduct = () => {
     </div>
   );
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setIsRefresh: () => { dispatch(setIsRefresh()) }
+  }
+}
 
-export default ModalExample;
+export default connect(null, mapDispatchToProps) (ModalExample);
