@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {  Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from 'axios';
-import App from '../App'
+
 const ModalExample = (props) => {
   const {
-    className 
+    className,
+    handleClickOpen,
+    handleClose,
+    modal 
   } = props;
   
-  const [modal, setModal] = useState(false);
   const [categories, setCategories] = useState([]);
 
   
@@ -42,17 +44,9 @@ const [values, setValues] = React.useState({
         console.log(err)
     })
   }
-  const handleClickOpen = () => {
-    setModal(true);
-  };
-
-  const handleClose = () => {
-    setModal(false);
-  };
 
     return (
       <div>
-        <App isOpen={handleClickOpen}/>
         <Modal isOpen={modal} toggle={handleClickOpen} className={className}>
           <ModalHeader>Add Product</ModalHeader>
           <ModalBody>
@@ -63,7 +57,7 @@ const [values, setValues] = React.useState({
         </FormGroup>
         <FormGroup>
           <Label for="exampleEmail">Description</Label>
-          <Input type="email" name="description" id="exampleEmail" value={values.description} onChange={handleChange('description')}/>
+          <Input type="email" defaultValue="" name="description" id="exampleEmail" value={values.description} onChange={handleChange('description')}/>
         </FormGroup>
         <FormGroup>
           <Label for="exampleEmail">Price</Label>
@@ -89,7 +83,7 @@ const [values, setValues] = React.useState({
        </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={()=>{handleClose(); postProduct()}}>Add</Button>{' '}
-            <Button color="secondary" onClick={handleClose}>Cancel</Button>
+            <Button color="secondary" onClick={() => handleClose()}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>

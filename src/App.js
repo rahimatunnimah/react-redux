@@ -7,11 +7,30 @@ import search from './search.svg';
 import { connect } from 'react-redux';
 import { searchProduct, editQty } from '../src/redux/actions'
 import Product from './components/Product'
+import AddProduct from './components/AddProduct'
 import { Badge, Button } from 'reactstrap'
 
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+        modal: false
+    }
+}
+
+handleClickOpen () {
+  this.setState({
+    modal: true
+  });
+};
+
+handleClose (){
+  this.setState({
+    modal: false
+  });
+};
   render(){
     return (
       <div className='main-app'> 
@@ -38,7 +57,8 @@ class App extends Component {
         <ul>
           <li><img src={fork} className="fork" alt="menu"/></li>
           <li><img src={report} className="report" alt="menu"/></li>
-          <li><img src={add} className="add" alt="menu" onClick={this.props.isOpen}/></li>
+          <li><img src={add} className="add" alt="menu" onClick={() => this.handleClickOpen()}/></li>
+          <AddProduct handleClickOpen={() => this.handleClickOpen()} handleClose={() => this.handleClose()} modal={this.state.modal}/>
         </ul>
       </div>
       <Product />
