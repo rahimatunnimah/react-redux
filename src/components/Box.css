@@ -36,18 +36,20 @@
 }
 
 .btn_btn1{
-    border: 1px solid rgb(56, 56, 240);
-    background-color: rgb(42, 226, 42);
+    border: 1px solid rgb(228, 230, 235);
+    background-color: rgb(0, 10, 95);
     padding: 10px 20px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     width: fit-content;
+    color: aliceblue;
+    border-radius: 6px;
     
 }
 
 .btn_btn2{
-    border: 1px solid rgb(56, 56, 240);
+    border: 1px solid rgb(228, 230, 235);
     background-color: rgb(226, 46, 23);
     padding: 10px 20px;
     font-size: 20px;
@@ -55,5 +57,6 @@
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     width: fit-content;
-    
+    color: aliceblue;
+    border-radius: 6px;
 }
