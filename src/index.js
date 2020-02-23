@@ -14,8 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const AppWithRouter = () => (
   <Provider store={store}>
     <Router>
-      <Route path="/" exact component={App} />
-      <Route path="/login" component={Login} />
+      <Route path="/" exact component={Login} />
+      <Route path="/main" component={App} />
       <Route path="/register" component={Register} />
     </Router>
   </Provider>
