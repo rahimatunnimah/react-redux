@@ -37,13 +37,13 @@
 
 .btn_btn1{
     border: 1px solid rgb(228, 230, 235);
-    background-color: rgb(0, 10, 95);
+    background-color: rgb(48, 172, 230);
     padding: 10px 20px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
     width: fit-content;
-    color: aliceblue;
+    color: black;
     border-radius: 6px;
     
 }

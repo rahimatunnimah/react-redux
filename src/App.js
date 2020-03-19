@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import fork from './fork.svg';
-import report from './report.svg';
-import add from './add.svg';
-import menu from './menu-button.svg';
-import search from './search.svg';
+import fork from './assests/fork.svg';
+import report from './assests/report.svg';
+import add from './assests/add.svg';
+import menu from './assests/menu-button.svg';
+import search from './assests/search.svg';
+import logout from './assests/logout.png';
 import { connect } from 'react-redux';
 import { searchProduct, editQty } from '../src/redux/actions'
 import Product from './components/Product'
@@ -18,6 +19,7 @@ class App extends Component {
     this.state = {
         modal: false
     }
+    this.handleLogout = this.handleLogout.bind(this);
 }
 
 handleClickOpen () {
@@ -31,6 +33,18 @@ handleClose (){
     modal: false
   });
 };
+async handleLogout (){
+   await localStorage.removeItem('Token')
+   console.log(this)
+   this.props.history.push('/')
+   
+}
+componentDidMount(){
+  const token = localStorage.getItem('Token')
+  if (!token){
+    this.props.history.push('/')
+  }
+}
   render(){
     return (
       <div className='main-app'> 
@@ -58,6 +72,7 @@ handleClose (){
           <li><img src={fork} className="fork" alt="menu"/></li>
           <li><img src={report} className="report" alt="menu"/></li>
           <li><img src={add} className="add" alt="menu" onClick={() => this.handleClickOpen()}/></li>
+          <li><img src={logout} className="logout" alt="menu" onClick={this.handleLogout}/> </li>
           <AddProduct handleClickOpen={() => this.handleClickOpen()} handleClose={() => this.handleClose()} modal={this.state.modal}/>
         </ul>
       </div>

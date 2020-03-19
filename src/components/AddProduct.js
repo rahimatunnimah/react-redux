@@ -53,19 +53,19 @@ const [values, setValues] = React.useState({
           <Form>
         <FormGroup>
           <Label for="exampleEmail">Name</Label>
-          <Input type="email" name="name" id="exampleEmail" value={values.name} onChange={handleChange('name')}/>
+          <Input type="email" name="name" id="exampleEmail" placeholder='name' onChange={handleChange('name')}/>
         </FormGroup>
         <FormGroup>
           <Label for="exampleEmail">Description</Label>
-          <Input type="email" defaultValue="" name="description" id="exampleEmail" value={values.description} onChange={handleChange('description')}/>
+          <Input type="email" defaultValue="" name="description" id="exampleEmail" placeholder='description' onChange={handleChange('description')}/>
         </FormGroup>
         <FormGroup>
           <Label for="exampleEmail">Price</Label>
-          <Input type="email" name="price" id="exampleEmail" value={values.price} onChange={handleChange('price')}/>
+          <Input type="email" name="price" id="exampleEmail" placeholder='price' onChange={handleChange('price')}/>
         </FormGroup>
         <FormGroup>
           <Label for="exampleEmail">Stock</Label>
-          <Input type="email" name="stock" id="exampleEmail" value={values.stock} onChange={handleChange('stock')}/>
+          <Input type="email" name="stock" id="exampleEmail" placeholder='stock' onChange={handleChange('stock')}/>
         </FormGroup>
         <FormGroup>
         <Label for="exampleSelect">Category</Label>

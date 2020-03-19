@@ -11,11 +11,10 @@ const initialState = {
 
 export default function (state = initialState, action) {
   if (action.type === ADD_TO_CART) {
-    // memfilter id dari product untuk selanjutnya ditambahkan ke dalam addedItem
+   
     const { id } = action.payload
     const addedItem = state.allProducts.find(product => product.id === id)
 
-    // check if the action id exists in the addedItems
     const existedItem = state.addedItems.find(item => item.id === id)
     if (existedItem) {
       const newAddedItems = state.addedItems.filter(item => item.id !== existedItem.id)
@@ -26,7 +25,7 @@ export default function (state = initialState, action) {
       }
     } else {
       addedItem.quantity = 1
-      // calculating the total
+    
       const newTotal = state.total + addedItem.price
 
       return {
